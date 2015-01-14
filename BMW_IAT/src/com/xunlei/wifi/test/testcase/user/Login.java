@@ -13,12 +13,18 @@ public class Login extends BaseCase {
 	@Test(summary = "微信登录", expectedResults = "登录成功", index = 1)
 	public void testLogin_1() {
 		User user = new User();
-
+		//入参
 		user.setHttpParam("extUserId", "oGsKmswsHSifPDfcEdBu6i_bW9hM");
 		user.setHttpParam("extUserName", "aixiaoeye");
 		user.setHttpParam("platform", "weixin");
+		//调用
 		JSONObject result = user.postJsonResp(Constant.USER_LOGINBYTHIRD);
+		//验证
+		assertEquals(220069, result.getInt("userId"));
+	}
+	
+	@Test
+	public void testlogin_2(){
 		
-		assertNotNull(result);
 	}
 }
