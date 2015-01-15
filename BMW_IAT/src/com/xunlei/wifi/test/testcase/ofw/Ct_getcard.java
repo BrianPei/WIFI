@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.xunlei.wifi.test.modules.base.BaseCase;
 import com.xunlei.wifi.test.modules.utils.Constant;
 import static org.junit.Assert.*;
+
 public class Ct_getcard extends BaseCase{
 	@Test(summary = "客户端请求时长卡-新申请卡", expectedResults = "申请卡成功", index = 1)
 	public void test_ct_getcard1() {		
@@ -18,6 +19,7 @@ public class Ct_getcard extends BaseCase{
 		//验证
 		assertNotNull(result);
 	}
+	
 	@Test(summary = "客户端请求时长卡-余额不足时重新申请", expectedResults = "申请卡成功", index = 2)
 	public void test_ct_getcard2() {		
 		//入参
