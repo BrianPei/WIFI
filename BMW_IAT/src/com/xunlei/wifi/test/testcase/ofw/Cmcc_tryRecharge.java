@@ -1,5 +1,6 @@
 package com.xunlei.wifi.test.testcase.ofw;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 import net.sf.json.JSONObject;
 
@@ -15,6 +16,6 @@ public class Cmcc_tryRecharge extends BaseCase {
 		//调用
 		JSONObject result = g_user.postJsonResp(Constant.OFW_CMCC_TRYRECHARGE);
 		//验证
-		assertNotNull(result);
+		assertEquals(result.getInt("result"),1); //0是获取到时长，1是未获取到时长
 	}
 }
