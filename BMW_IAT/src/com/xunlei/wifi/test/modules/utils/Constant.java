@@ -48,7 +48,21 @@ public class Constant {
 	public static String USER_REG = "user.reg";
 	public static String USER_UNBINDTHIRD = "user.unbindThird";
 	// ================================================================================
-	
+
+	// ===========================Reward模块接口名=======================================
+	public static String REWARD_BONUS = "reward.bonus";
+	public static String REWARD_CONFIG = "reward.config";
+	public static String REWARD_ENCASH = "reward.encash";
+	public static String REWARD_ENCASHDETAIL = "reward.encashDetail";
+	public static String REWARD_LIST = "reward.list";
+	public static String REWARD_SUBMIT = "reward.submit";
+	// ================================================================================
+
+	// ===========================Config模块接口名===================================
+	public static String CONFIG_CONFIG = "config.config";
+	public static String CONFIG_SHARECONFIG = "config.shareConfig";
+	// ================================================================================
+
 	// ===========================Wifiinfo模块接口名===================================
 	public static String WIFIINFO_MINE = "wifiinfo.mine";
 	// ================================================================================
