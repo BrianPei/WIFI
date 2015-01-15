@@ -64,7 +64,17 @@ public class Constant {
 	// ================================================================================
 
 	// ===========================Wifiinfo模块接口名===================================
+	public static String WIFIINFO_ACCEPTINVIT = "wifiinfo.acceptInvit";
+	public static String WIFIINFO_CHECKSHARELIST = "wifiinfo.checkShareList";
+	public static String WIFIINFO_COLLECT = "wifiinfo.collect";
+	public static String WIFIINFO_CREATECSV = "wifiinfo.createCsv";
+	public static String WIFIINFO_DUMPPWD = "wifiinfo.dumpPwd";
+	public static String WIFIINFO_INVITCODE = "wifiinfo.invitCode";
 	public static String WIFIINFO_MINE = "wifiinfo.mine";
+	public static String WIFIINFO_NEARBY = "wifiinfo.nearby";
+	public static String WIFIINFO_QUERY = "wifiinfo.query";
+	public static String WIFIINFO_SHARE = "wifiinfo.share";
+	public static String WIFIINFO_SHARECOUNT = "wifiinfo.shareCount";
 	// ================================================================================
 	
 	// ===========================Ofw模块接口名=======================================
