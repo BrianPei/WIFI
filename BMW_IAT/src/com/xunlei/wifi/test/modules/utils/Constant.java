@@ -21,9 +21,9 @@ public class Constant {
 	// ===================================测试环境帐号信息==================================
 
 	// 预置登录的主帐号
-	public static String OPENID_TEST = "oGsKmswsHSifPDfcEdBu6i_bW9hM";
-	public static String USERNAME_TEST = "aixiaoeye";
-	public static String USERID_TEST = "220069";
+	public static String OPENID_TEST = "oGsKms0G_IG6cvXk0sKje9sP89XU";
+	public static String USERNAME_TEST = "青青的小树";
+	public static String USERID_TEST = "220062";
 
 	// ================================================================================
 
