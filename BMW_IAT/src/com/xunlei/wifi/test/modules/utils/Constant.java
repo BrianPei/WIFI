@@ -66,4 +66,15 @@ public class Constant {
 	// ===========================Wifiinfo模块接口名===================================
 	public static String WIFIINFO_MINE = "wifiinfo.mine";
 	// ================================================================================
+	
+	// ===========================Ofw模块接口名=======================================
+	public static String OFW_CMCC_BALANCE ="ofw.cmcc.balance";
+	public static String OFW_CMCC_LOGIN ="ofw.cmcc.login";
+	public static String OFW_CMCC_LOGOUT ="ofw.cmcc.logout";
+	public static String OFW_CMCC_TRYRECHARGE ="ofw.cmcc.tryRecharge";
+	public static String OFW_CT_GETCARD ="ofw.ct.getCard";
+	public static String OFW_CT_NOTICELOGIN ="ofw.ct.noticeLogin";
+	public static String OFW_CT_NOTICELOGOUT ="ofw.ct.noticeLogout";	
+	// ================================================================================
+	
 }
