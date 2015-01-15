@@ -1,5 +1,6 @@
 package com.xunlei.wifi.test.testcase.ofw;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import net.sf.json.JSONObject;
 
@@ -16,6 +17,6 @@ public class Ct_noticeLogout extends BaseCase {
 		//调用
 		JSONObject result = g_user.postJsonResp(Constant.OFW_CT_NOTICELOGOUT);
 		//验证
-		assertNotNull(result);
+		assertEquals(result.getInt("result"),0);
 	}
 }

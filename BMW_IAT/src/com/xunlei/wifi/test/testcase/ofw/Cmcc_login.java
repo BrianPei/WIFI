@@ -1,5 +1,6 @@
 package com.xunlei.wifi.test.testcase.ofw;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 import net.sf.json.JSONObject;
 
@@ -12,11 +13,11 @@ public class Cmcc_login extends BaseCase {
 	@Test(summary = "客户端通知登陆CMCC", expectedResults = "登陆CMCC成功", index = 1)
 	public void test_cmcc_login1() {
 		//入参
-		g_user.setHttpParam("sessionId", "1421290503859");
+		g_user.setHttpParam("sessionId", "1421307666333");
 		g_user.setHttpParam("duration", "100");
 		//调用
 		JSONObject result = g_user.postJsonResp(Constant.OFW_CMCC_LOGIN);
 		//验证
-		assertNotNull(result);
+		assertTrue(result.getInt("result")>=0);
 	}
 }
