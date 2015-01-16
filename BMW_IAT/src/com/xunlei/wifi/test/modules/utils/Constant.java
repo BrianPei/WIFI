@@ -20,10 +20,15 @@ public class Constant {
 
 	// ===================================测试环境帐号信息==================================
 
-	// 预置登录的主帐号
+	// 预置登录的主帐号（微信）
 	public static String OPENID_TEST = "oGsKms0G_IG6cvXk0sKje9sP89XU";
 	public static String USERNAME_TEST = "青青的小树";
 	public static String USERID_TEST = "220062";
+	
+	//已注册的QQ帐号
+	public static String OPENID_QQ_TEST = "8C9F18F0F0301568472F943123C396CD";
+	public static String USERNAME_QQ_TEST = "下雨天";
+	public static String USERID_QQ_TEST = "220112";
 
 	// ================================================================================
 
@@ -41,12 +46,12 @@ public class Constant {
 
 	// ===========================User模块接口名=======================================
 	public static String USER_ACCOUNTLIST = "user.accountList";
-	public static String USER_BINDTHIRD = "user.bindThird";
+	public static String USER_BIND = "user.bind";
 	public static String USER_COMMISION = "user.commision";
 	public static String USER_INVITED = "user.invited";
 	public static String USER_LOGINBYTHIRD = "user.loginByThird";
 	public static String USER_REG = "user.reg";
-	public static String USER_UNBINDTHIRD = "user.unbindThird";
+	public static String USER_UNBIND = "user.unbind";
 	// ================================================================================
 
 	// ===========================Reward模块接口名=======================================
@@ -75,16 +80,21 @@ public class Constant {
 	public static String WIFIINFO_QUERY = "wifiinfo.query";
 	public static String WIFIINFO_SHARE = "wifiinfo.share";
 	public static String WIFIINFO_SHARECOUNT = "wifiinfo.shareCount";
+	public static String WIFIINFO_UPDATEDICT = "wifiinfo.updateDict";
 	// ================================================================================
-	
+
 	// ===========================Ofw模块接口名=======================================
-	public static String OFW_CMCC_BALANCE ="ofw.cmcc.balance";
-	public static String OFW_CMCC_LOGIN ="ofw.cmcc.login";
-	public static String OFW_CMCC_LOGOUT ="ofw.cmcc.logout";
-	public static String OFW_CMCC_TRYRECHARGE ="ofw.cmcc.tryRecharge";
-	public static String OFW_CT_GETCARD ="ofw.ct.getCard";
-	public static String OFW_CT_NOTICELOGIN ="ofw.ct.noticeLogin";
-	public static String OFW_CT_NOTICELOGOUT ="ofw.ct.noticeLogout";	
+	public static String OFW_CMCC_BALANCE = "ofw.cmcc.balance";
+	public static String OFW_CMCC_LOGIN = "ofw.cmcc.login";
+	public static String OFW_CMCC_LOGOUT = "ofw.cmcc.logout";
+	public static String OFW_CMCC_TRYRECHARGE = "ofw.cmcc.tryRecharge";
+	public static String OFW_CT_GETCARD = "ofw.ct.getCard";
+	public static String OFW_CT_NOTICELOGIN = "ofw.ct.noticeLogin";
+	public static String OFW_CT_NOTICELOGOUT = "ofw.ct.noticeLogout";
 	// ================================================================================
-	
+
+	// ===========================Wall模块接口名===================================
+	public static String WALL_DOMOB = "wall.domob";
+	public static String WALL_MUMAYI = "wall.mumayi";
+	// ================================================================================
 }
