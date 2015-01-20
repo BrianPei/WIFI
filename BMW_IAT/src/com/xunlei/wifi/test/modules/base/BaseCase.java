@@ -32,7 +32,8 @@ public class BaseCase {
 		platform = Configuration.loadProperties().getProperty("environment");
 		switch (platform) {
 		case "test":
-			g_user = new User(Constant.OPENID_TEST, Constant.USERNAME_TEST);
+			g_user = new User(Constant.OPENID_TEST, Constant.USERNAME_TEST,
+					"weixin");
 			break;
 		case "pre":
 			break;

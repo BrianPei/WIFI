@@ -24,11 +24,19 @@ public class Constant {
 	public static String OPENID_TEST = "oGsKms0G_IG6cvXk0sKje9sP89XU";
 	public static String USERNAME_TEST = "青青的小树";
 	public static String USERID_TEST = "220062";
-	
-	//已注册的QQ帐号
+
+	// 已注册的QQ帐号
 	public static String OPENID_QQ_TEST = "8C9F18F0F0301568472F943123C396CD";
 	public static String USERNAME_QQ_TEST = "下雨天";
 	public static String USERID_QQ_TEST = "220112";
+
+	// 测试绑定用的QQ帐号
+	public static String OPENID_QQ_TEST2 = "1EDA5014E930971855AA9B50B4D2C46C";
+	public static String USERNAME_QQ_TEST2 = "猪熏熏";
+
+	// 测试绑定用的微信帐号
+	public static String OPENID_TEST2 = "oGsKmsxhJXLHWF1ZfXmgELZ6np90";
+	public static String USERNAME_TEST2 = "裴二煜";
 
 	// ================================================================================
 

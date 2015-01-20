@@ -85,7 +85,7 @@ public class User {
 		}
 	}
 
-	public User(String openId, String userName) {
+	public User(String openId, String userName, String type) {
 		http_param = new HashMap<String, String>();
 		switch (platform) {
 		case "test":
@@ -98,7 +98,7 @@ public class User {
 			user_post_url = Constant.ONLINE_URL;
 			break;
 		}
-		login(openId, userName);
+		login(openId, userName, type);
 	}
 
 	/**
@@ -206,12 +206,12 @@ public class User {
 	 * @param openId
 	 * @param userName
 	 */
-	public void login(String openId, String userName) {
+	public void login(String openId, String userName, String type) {
 		Map<String, String> param = new HashMap<String, String>();
 		JSONObject jsonObject;
 		param.put("extUserId", openId);
 		param.put("extUserName", userName);
-		param.put("platform", "weixin");
+		param.put("platform", type);
 		param.put("appId", Constant.APP_ID);
 		param.put("v", Constant.VERSION);
 		param.put("callId", String.valueOf(new Date().getTime()));

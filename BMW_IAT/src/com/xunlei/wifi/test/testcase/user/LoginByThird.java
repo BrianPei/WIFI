@@ -29,8 +29,8 @@ public class LoginByThird extends BaseCase {
 	public void testLoginByThird_2() {
 		User user = new User();
 
-		user.setHttpParam("extUserId", "8C9F18F0F0301568472F943123C396CD");
-		user.setHttpParam("extUserName", "下雨天");
+		user.setHttpParam("extUserId", Constant.OPENID_QQ_TEST);
+		user.setHttpParam("extUserName", Constant.USERNAME_QQ_TEST);
 		user.setHttpParam("platform", "qq");
 		JSONObject result = user.postJsonResp(Constant.USER_LOGINBYTHIRD);
 		assertEquals(220112, result.getInt("userId"));
@@ -42,7 +42,7 @@ public class LoginByThird extends BaseCase {
 	public void testLoginByThird_3() {
 		User user = new User();
 
-		user.setHttpParam("extUserId", "oGsKms0G_IG6cvXk0sKje9sP89XU");
+		user.setHttpParam("extUserId", Constant.USERID_TEST);
 		user.setHttpParam("extUserName", "青青的小树");
 		user.setHttpParam("platform", "weixin");
 		JSONObject result = user.postJsonResp(Constant.USER_LOGINBYTHIRD);

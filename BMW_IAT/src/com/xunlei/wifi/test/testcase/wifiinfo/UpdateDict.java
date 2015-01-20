@@ -11,7 +11,7 @@ import com.xunlei.wifi.test.modules.utils.Constant;
 public class UpdateDict extends BaseCase{
 	@Test(summary = "更新密码字典", expectedResults = "更新成功", index = 1)
 	public void testUpdateDict_1() {
-		g_user.setHttpParam("version", "0");
+		g_user.setHttpParam("version", "1421065936");
 		JSONObject result = g_user.getJsonResp(Constant.WIFIINFO_UPDATEDICT);
 		assertNotNull(result);
 	}
