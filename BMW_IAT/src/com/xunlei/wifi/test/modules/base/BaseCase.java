@@ -36,8 +36,12 @@ public class BaseCase {
 					"weixin");
 			break;
 		case "pre":
+			g_user = new User(Constant.OPENID_PRE, Constant.USERNAME_PRE,
+					"weixin");
 			break;
 		default:
+			g_user = new User(Constant.OPENID_ONLINE, Constant.USERNAME_ONLINE,
+					"weixin");
 			break;
 		}
 	}

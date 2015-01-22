@@ -1,7 +1,6 @@
 package com.xunlei.wifi.test.testcase.ofw;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertNotNull;
 import net.sf.json.JSONObject;
 
 import org.junit.Test;

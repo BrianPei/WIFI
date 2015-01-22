@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import com.xunlei.wifi.test.modules.base.BaseCase;
 import com.xunlei.wifi.test.modules.utils.Constant;
-import static org.junit.Assert.*;
 
 public class Ct_getcard extends BaseCase{
 	@Test(summary = "客户端请求时长卡-新申请卡", expectedResults = "申请卡成功", index = 1)

@@ -7,7 +7,6 @@ import net.sf.json.JSONObject;
 import org.junit.Test;
 
 import com.xunlei.wifi.test.modules.base.BaseCase;
-import com.xunlei.wifi.test.modules.model.User;
 import com.xunlei.wifi.test.modules.utils.Constant;
 
 public class Cmcc_balance extends BaseCase{
