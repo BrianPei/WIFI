@@ -121,7 +121,6 @@ public class User {
 		paramsPrint(http_param);
 
 		String params = ParamUtils.map2Str(http_param);
-		System.out.println("参数序列：" + params);
 
 		JSONObject resultObject = NewHttpTools.SendGetRequest(
 				ParamUtils.GetPostUrl(user_post_url, api), params);
@@ -147,8 +146,6 @@ public class User {
 		String sig = sig(http_param);
 		http_param.put("sig", sig);
 		paramsPrint(http_param);
-
-		System.out.println("参数序列：" + ParamUtils.map2Str(http_param));
 
 		JSONObject resultObject = NewHttpTools.SendPostRequest(
 				ParamUtils.GetPostUrl(user_post_url, api), http_param);
