@@ -43,4 +43,15 @@ public class Reward {
 		JSONObject result = user.postJsonResp(Constant.REWARD_ENCASHDETAIL);
 		return result.getJSONArray("encashDetailList").getJSONObject(0);
 	}
+	/*
+	 *  获取用户完成任务的情况
+	 *  @param user
+	 *  @return 
+	 */
+	public static JSONObject getlist(User user){
+		user.setHttpParam("dump", "reward.list");
+		JSONObject result =user.postJsonResp(Constant.REWARD_LIST);
+		return result.getJSONArray("missionStatusList").getJSONObject(0);
+		
+	}
 }
