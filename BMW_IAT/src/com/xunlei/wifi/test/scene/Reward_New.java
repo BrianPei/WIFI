@@ -53,13 +53,13 @@ public class Reward_New {
 	 * @return
 	 */
 	public static JSONObject getLatestEncashDetail(User user) {
-		user.setHttpParam("count", "1");
-		user.setHttpParam("actionId", "0");
+		user.setHttpParam("count", "10"); //每页显示条数
+		user.setHttpParam("actionId", "0"); //分页最后id
 		JSONObject result = user.postJsonResp(Constant.REWARD_ENCASHDETAIL);
 		return result.getJSONArray("encashDetailList").getJSONObject(0);
 	}
 	/*
-	 * 获取用户完成任务的情况
+	 * 获取用户完成额外任务的情况
 	 * @param user
 	 * @return
 	 * 
@@ -67,7 +67,7 @@ public class Reward_New {
 	public static JSONObject getlist(User user){
 		user.setHttpParam("dump", "reward.list");
 		JSONObject result = user.postJsonResp(Constant.REWARD_LIST);
-		return result.getJSONArray("missionStatusList").getJSONObject(0);
+		return result.getJSONArray("missionStatusList").getJSONObject(3);
 	}
 	/*
 	 * 完成任务，获取奖金情况

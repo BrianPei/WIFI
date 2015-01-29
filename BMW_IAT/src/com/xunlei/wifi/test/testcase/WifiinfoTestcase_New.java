@@ -6,6 +6,7 @@ import net.sf.json.JSONObject;
 import org.junit.Test;
 
 import com.xunlei.wifi.test.modules.base.BaseCase;
+import com.xunlei.wifi.test.modules.model.User;
 import com.xunlei.wifi.test.scene.wifiinfo_New;
 	/*
 	 * 共享wifi模块：
@@ -23,20 +24,23 @@ public class WifiinfoTestcase_New extends BaseCase {
 		String bssids="74:91:1a:60:34:80";
 		String password="123456";
 		int type=1; 
+		String ssid="";//输入wifi的ssid
 		int hasReward=1;// 1:有奖励,0:没有奖励
 		int rewardType=1;//1是现金奖励，2是CMCC时长奖励
-		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type,
-				hasReward, rewardType);
+		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type, ssid, hasReward, rewardType);
 		assertNotNull("共享wifi不成功", sharewifi);
-		
+
+	}
+	@Test(summary="共享10个wifi获得奖励",expectedResults="获得奖励成功",index=2)
+	public void wifiinfoTestcase_New2(){	
 		//共享10个wifi后可领取5元
 		int missionId=4;
 		JSONObject Extra_rewardValue=wifiinfo_New.preformExtra_reward(g_user, missionId);
 		assertEquals("额外奖励提交结果不成功", Extra_rewardValue.getInt("result"), 0);
 	}
 	
-	@Test(summary="新用户激活获得奖励",expectedResults="获得奖励成功",index=2)
-	public void wifiinfoTestcase_New2(){
+	@Test(summary="新用户激活获得奖励",expectedResults="获得奖励成功",index=3)
+	public void wifiinfoTestcase_New3(){
 		
 		//激活奖励获取0.5元
 		int missionId=1;
@@ -45,17 +49,60 @@ public class WifiinfoTestcase_New extends BaseCase {
 	}
 	
 	
-	@Test(summary="提成奖励",expectedResults="获得奖励成功",index=3)
-	public void wifiinfoTestcase_New3(){
+	@Test(summary="发展下线提成奖励",expectedResults="获得奖励成功",index=4)
+	public void wifiinfoTestcase_New4(){
 		
 		//发展下线提成奖励5%
 		int missionId=5;
 		JSONObject percentageValue=wifiinfo_New.preform_reward_percentage(g_user, missionId);
 		assertEquals("下线奖励提交结果不成功", percentageValue.getInt("result"), 0);
 		
+		
+	}
+	@Test(summary="一级代理发展提成奖励",expectedResults="获得奖励成功",index=5)
+	public void wifiinfoTestcase_New5(){
 		//一级代理发展下线提成
 		int missionId1=6;
 		JSONObject partner_percentageValue=wifiinfo_New.preform_reward_partner_percentage(g_user, missionId1);
 		assertEquals("一级代理奖励提交结果不成功", partner_percentageValue.getInt("result"), 0);
 	}
+	@Test(summary="受限制的ssid不能共享成功",expectedResults="不能共享成功",index=6)
+	public void wifiinfoTestcase_New6(){
+	
+		//共享无需密码wifi/ChinaNet/CMCC，错误码返回正确
+		String bssids="74:91:1a:60:34:80";
+		String password="123456";
+		int type=1; 
+		String ssid="CMCC-WEB";//输入wifi的ssid
+		int hasReward=1;// 1:有奖励,0:没有奖励
+		int rewardType=1;//1是现金奖励，2是CMCC时长奖励
+		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type, ssid, hasReward, rewardType);
+		assertNotNull("共享wifi成功", sharewifi);
+	}
+	@Test(summary="受限制的Bssid不能共享成功",expectedResults="不能共享成功",index=7)
+	public void wifiinfoTestcase_New7(){
+	
+		//共享被人为屏蔽掉得wifi（xiaomi、360开头等)
+		String bssids="74:91:1a:60:34:80";
+		String password="123456";
+		int type=1; 
+		String ssid="CMCC-WEB";//输入wifi的ssid
+		int hasReward=1;// 1:有奖励,0:没有奖励
+		int rewardType=1;//1是现金奖励，2是CMCC时长奖励
+		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type, ssid, hasReward, rewardType);
+		assertNotNull("共享wifi成功", sharewifi);
+	}
+	@Test(summary="黑名单用户不能共享成功",expectedResults="不能共享成功",index=8)
+	public void wifiinfoTestcase_New8(){
+		User blacklistuser =new User("", "", "");//输入黑名单用户openid、用户名、 platform
+		String bssids="74:91:1a:60:34:80";
+		String password="123456";
+		int type=1; 
+		String ssid="CMCC-WEB";//输入wifi的ssid
+		int hasReward=1;// 1:有奖励,0:没有奖励
+		int rewardType=1;//1是现金奖励，2是CMCC时长奖励
+		JSONObject sharewifi =wifiinfo_New.performSharewifi(blacklistuser, bssids, password, type, ssid, hasReward, rewardType);
+		assertNotNull("共享wifi成功", sharewifi);
+	}
+	
 }

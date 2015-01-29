@@ -19,11 +19,12 @@ public class wifiinfo_New {
 	 * @return
 	 * 
 	 */
-	public static JSONObject performSharewifi(User user,String bssids,String password,int type,
+	public static JSONObject performSharewifi(User user,String bssids,String password,int type,String ssid,
 			int hasReward,int rewardType){
 		user.setHttpParam("bssids", bssids);
 		user.setHttpParam("password", password);
 		user.setHttpParam("type", String.valueOf(type));
+		user.setHttpParam("ssid", ssid);
 		user.setHttpParam("hasReward", String.valueOf(hasReward));
 		user.setHttpParam("rewardType", String.valueOf(rewardType));		
 		JSONObject result = user.getJsonResp(Constant.WIFIINFO_SHARE);
