@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import com.xunlei.wifi.test.modules.base.BaseCase;
+import com.xunlei.wifi.test.modules.utils.Constant;
 import com.xunlei.wifi.test.scene.Reward_New;
 import com.xunlei.wifi.test.scene.config_New;
 import com.xunlei.wifi.test.scene.wifiinfo_New;
@@ -30,10 +31,10 @@ public class Closeconfig_to_NoReward extends BaseCase{
 	@Test(summary="共享wifi领现金活动关闭、共享无法得现金",expectedResults="无法得现金",index=2)
 	public void Closeconfig_to_NoRewardtest2(){
 	//共享wifi领现金活动关闭、共享无法得现金
-		String bssids="74:91:1a:60:34:80";
-		String password="123456";
-		int type=1; 
-		String ssid="";
+		String bssids=Constant.WIFI_BSSID;
+		String password=Constant.WIFI_PASSWARD;
+		int type=Constant.WIFI_TPYE; 
+		String ssid=Constant.WIFI_SSID;
 		int hasReward=1;// 1:有奖励,0:没有奖励
 		int rewardType=1;//1是现金奖励，2是CMCC时长奖励
 		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type,ssid,
@@ -44,10 +45,10 @@ public class Closeconfig_to_NoReward extends BaseCase{
 	@Test(summary="共享wifi领时长活动关闭、共享无法得时长",expectedResults="无法得时长",index=3)
 	public void Closeconfig_to_NoRewardtest3(){
 	//共享wifi领现金活动关闭、共享无法得时长
-		String bssids="74:91:1a:60:34:80";
-		String password="123456";
-		int type=1; 
-		String ssid="";
+		String bssids=Constant.WIFI_BSSID;
+		String password=Constant.WIFI_PASSWARD;
+		int type=Constant.WIFI_TPYE; 
+		String ssid=Constant.WIFI_SSID;
 		int hasReward=1;// 1:有奖励,0:没有奖励
 		int rewardType=2;//1是现金奖励，2是CMCC时长奖励
 		JSONObject sharewifi =wifiinfo_New.performSharewifi(g_user, bssids, password, type,ssid,
@@ -59,7 +60,7 @@ public class Closeconfig_to_NoReward extends BaseCase{
 	public void Closeconfig_to_NoRewardtest4(){
 	//拉取总开关和共享wifi领现金配置，确认已经关闭
 		JSONObject checkconfig_off =Reward_New.getconfig(g_user);
-		assertEquals("雷锋领取金页总开关开启", checkconfig_off.getInt("result"), 0);
+		assertEquals("雷锋领取金页总开关开启", checkconfig_off.getInt("status"), 0);
 		assertEquals("共享wifi领现金活动开启", checkconfig_off.getJSONArray("missionConfigList").getJSONObject(1).getInt("missionStatus"), 0);
 		
 	//拉取共享wifi得时长配置，确认已关闭

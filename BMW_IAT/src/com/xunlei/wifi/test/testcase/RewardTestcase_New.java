@@ -61,7 +61,7 @@ public class RewardTestcase_New extends BaseCase{
 	  */
 	@Test(summary="查询是否满足5元任务",expectedResults="查询成功",index=2)
 	public void rewardTestcase_New2() {
-		//验证用户是否满足5元任务
+		//验证用户是否满足5元任务,当前用户是不满足
 		JSONObject listObject=Reward_New.getlist(g_user);
 		assertEquals("满足额外5元任务", listObject.getInt("status"), 0);		
 	}

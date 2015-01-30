@@ -24,7 +24,7 @@ public class Constant {
 	public static String OPENID_TEST = "oGsKms0G_IG6cvXk0sKje9sP89XU";
 	public static String USERNAME_TEST = "青青的小树";
 	public static String USERID_TEST = "220062";
-
+		
 	// 已注册的QQ帐号
 	public static String OPENID_QQ_TEST = "8C9F18F0F0301568472F943123C396CD";
 	public static String USERNAME_QQ_TEST = "下雨天";
@@ -39,8 +39,16 @@ public class Constant {
 	public static String USERNAME_TEST2 = "裴二煜";
 
 	// ================================================================================
-
-	// ===================================预发布环境帐号信息================================
+	
+	// ===================================黑名单帐号信息====================================
+	// Test环境黑名单的用户
+	public static String OPENID_BLACKLIST = "oGsKmsz7aNTOT4cEtx5IEKKd96_Y";
+	public static String USERNAME_BLACKLIST  = "小猫咪";
+	public static String USERID_BLACKLIST  = "220066";
+	public static String PLATFORM_BLACKLIST  = "weixin";
+	
+	// ================================================================================
+	// ===================================预发布环境帐号信息=================================
 
 	// 预置登录的主帐号（微信）
 	public static String OPENID_PRE = "oGsKms0G_IG6cvXk0sKje9sP89XU";
@@ -63,6 +71,14 @@ public class Constant {
 	public static String LAT_XUNLEI = "39.929481";
 
 	// ================================================================================
+	
+	
+	// ===========================一个可共享wifi的参数===================================
+		public static String WIFI_SSID = "test";
+		public static String WIFI_BSSID = "08:57:00:4D:77:2C";
+		public static String WIFI_PASSWARD="87654321";
+		public static int WIFI_TPYE=1;
+	// =========================================================================
 
 	// ===========================User模块接口名=======================================
 	public static String USER_ACCOUNTLIST = "user.accountList";
@@ -101,6 +117,7 @@ public class Constant {
 	public static String WIFIINFO_SHARE = "wifiinfo.share";
 	public static String WIFIINFO_SHARECOUNT = "wifiinfo.shareCount";
 	public static String WIFIINFO_UPDATEDICT = "wifiinfo.updateDict";
+	public static String WIFIINFO_CUSTOMDICT="wifiinfo.customDict";
 	// ================================================================================
 
 	// ===========================Ofw模块接口名=======================================
@@ -117,4 +134,10 @@ public class Constant {
 	public static String WALL_DOMOB = "wall.domob";
 	public static String WALL_MUMAYI = "wall.mumayi";
 	// ================================================================================
+	
+	// ===========================push模块接口名===================================
+		public static String PUSH_BINDING = "push.binding";
+		// ================================================================================
+	
+
 }
