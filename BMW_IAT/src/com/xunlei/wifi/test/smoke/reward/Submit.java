@@ -12,6 +12,7 @@ public class Submit extends BaseCase{
 	@Test(summary = "当前用户完成任务", expectedResults = "任务成功", index = 1)
 	public void testSubmit() {
 		g_user.setHttpParam("missionId", "1");
+		g_user.setHttpParam("subType", "1");
 		JSONObject result = g_user.getJsonResp(Constant.REWARD_SUBMIT);
 		assertEquals(result.getInt("result"), 0);
 		assertEquals(result.getInt("missionId"), 1);

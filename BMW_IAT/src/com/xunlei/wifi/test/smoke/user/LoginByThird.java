@@ -38,7 +38,7 @@ public class LoginByThird extends BaseCase {
 	}
 
 	@Test(summary = "微信注册", expectedResults = "注册成功", index = 3)
-	@Ignore
+	@Ignore("注册的测试帐号只能用一次")
 	public void testLoginByThird_3() {
 		User user = new User();
 
@@ -51,7 +51,7 @@ public class LoginByThird extends BaseCase {
 	}
 
 	@Test(summary = "QQ注册", expectedResults = "注册成功", index = 4)
-	@Ignore
+	@Ignore("注册的测试帐号只能用一次")
 	public void testLoginByThird_4() {
 		User user = new User();
 

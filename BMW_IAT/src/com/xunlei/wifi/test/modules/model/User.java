@@ -31,7 +31,7 @@ public class User {
 	private String token;
 	private String user_post_url;
 	public Map<String, String> http_param;
-
+	
 	public static final String appSecretKey = "7ygv6tfc";
 	private String loginSecretKey;
 
