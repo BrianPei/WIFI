@@ -1,6 +1,5 @@
 package com.xunlei.wifi.test.smoke.push;
 
-import static org.junit.Assert.assertEquals;
 import net.sf.json.JSONObject;
 import static org.junit.Assert.*;
 

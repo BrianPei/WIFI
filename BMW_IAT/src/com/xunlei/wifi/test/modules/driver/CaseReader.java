@@ -1,6 +1,8 @@
 package com.xunlei.wifi.test.modules.driver;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -152,8 +154,8 @@ public class CaseReader {
 	 * @param row
 	 * @return
 	 */
-	public HashMap<String, String> getResultsMap(XSSFRow row) {
-		HashMap<String, String> map = new HashMap<>();
+	public LinkedHashMap<String, String> getResultsMap(XSSFRow row) {
+		LinkedHashMap<String, String> map = new LinkedHashMap<>();
 		// 计算行数
 		XSSFRow keyRow = this.sheet.getRow(row.getRowNum() + 2);
 		XSSFRow valueRow = this.sheet.getRow(row.getRowNum() + 3);

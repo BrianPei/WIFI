@@ -1,5 +1,6 @@
 package com.xunlei.wifi.test.modules.driver;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +8,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -92,8 +94,9 @@ public class CaseDriver {
 				// 保存返回值
 				responseCell.setCellValue(resultObject.toString());
 				// 从excel获取预期结果集合
-				HashMap<String, String> resultMap = caseReader
+				LinkedHashMap<String, String> resultMap = caseReader
 						.getResultsMap(row);
+				System.out.println(resultMap);
 				// 验证结果，修改excel中用例运行结果
 				int result = verifyResult(resultObject, resultMap, row,
 						exceptionCell);
@@ -134,12 +137,75 @@ public class CaseDriver {
 	public int verifyResult(JSONObject resultObject,
 			Map<String, String> resultMap, XSSFRow row, XSSFCell cell) {
 		int resultFlag = 0;
+		JSONArray resultList = null;
 		try {
 			for (String key : resultMap.keySet()) {
 				String value = resultMap.get(key);
-				assertEquals(value, resultObject.getString(key));
+				if (resultList != null) {
+					// 循环获取List中的json进行验证
+					for (int i = 0; i < resultList.size(); i++) {
+						resultObject = resultList.getJSONObject(i);
+						// 分类检查结果
+						switch (value.toLowerCase()) {
+						case ">0":
+							assertTrue(resultObject.getInt(key) > 0);
+							break;
+						case "<0":
+							assertTrue(resultObject.getInt(key) < 0);
+							break;
+						case "!=0":
+							assertTrue(resultObject.getInt(key) != 0);
+							break;
+						case "contain":
+							assertTrue(resultObject.containsKey(key));
+							break;
+						case "notnull":
+							assertNotNull(resultObject.get(key));
+							break;
+						case "null":
+							assertNull(resultObject.get(key));
+							break;
+						default:
+							assertEquals(value, resultObject.getString(key));
+							break;
+						}
+					}
+				} else {
+					switch (value.toLowerCase()) {
+					// 判断后续结果是否包含在JSON中
+					case "jsonobject":
+						resultObject = resultObject.getJSONObject(key);
+						break;
+					// 判断后续结果是否包含在List中
+					case "jsonarray":
+						resultList = resultObject.getJSONArray(key);
+						break;
+					case ">0":
+						assertTrue(resultObject.getInt(key) > 0);
+						break;
+					case "<0":
+						assertTrue(resultObject.getInt(key) < 0);
+						break;
+					case "!=0":
+						assertTrue(resultObject.getInt(key) != 0);
+						break;
+					case "contain":
+						assertTrue(resultObject.containsKey(key));
+						break;
+					case "notnull":
+						assertNotNull(resultObject.get(key));
+						break;
+					case "null":
+						assertNull(resultObject.get(key));
+						break;
+					default:
+						assertEquals(value, resultObject.getString(key));
+						break;
+					}
+				}
 			}
 		} catch (Throwable e) {
+			e.printStackTrace();
 			// 记录异常信息
 			cell.setCellValue(e.getMessage());
 			resultFlag = 1;
