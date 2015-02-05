@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.xunlei.wifi.test.modules.base.BaseCase;
 import com.xunlei.wifi.test.scene.Reward;
 
-public class RewardTests extends BaseCase {
+public class RewardTestsDemo extends BaseCase {
 	@Test(summary = "用户提现并验证", expectedResults = "提现成功", index = 1)
 	public void rewardTest_1() {
 		// 获取奖金情况，确认有奖金余额

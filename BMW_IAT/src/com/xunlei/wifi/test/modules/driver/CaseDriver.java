@@ -97,7 +97,7 @@ public class CaseDriver {
 				LinkedHashMap<String, String> resultMap = caseReader
 						.getResultsMap(row);
 				System.out.println(resultMap);
-				// 验证结果，修改excel中用例运行结果
+				// 验证结果，在excel中记录用例运行结果
 				int result = verifyResult(resultObject, resultMap, row,
 						exceptionCell);
 				if (result == 0) {
@@ -148,25 +148,30 @@ public class CaseDriver {
 						// 分类检查结果
 						switch (value.toLowerCase()) {
 						case ">0":
-							assertTrue(resultObject.getInt(key) > 0);
+							assertTrue(key + "验证失败",
+									resultObject.getInt(key) > 0);
 							break;
 						case "<0":
-							assertTrue(resultObject.getInt(key) < 0);
+							assertTrue(key + "验证失败",
+									resultObject.getInt(key) < 0);
 							break;
 						case "!=0":
-							assertTrue(resultObject.getInt(key) != 0);
+							assertTrue(key + "验证失败",
+									resultObject.getInt(key) != 0);
 							break;
 						case "contain":
-							assertTrue(resultObject.containsKey(key));
+							assertTrue(key + "验证失败",
+									resultObject.containsKey(key));
 							break;
 						case "notnull":
-							assertNotNull(resultObject.get(key));
+							assertNotNull(key + "验证失败", resultObject.get(key));
 							break;
 						case "null":
-							assertNull(resultObject.get(key));
+							assertNull(key + "验证失败", resultObject.get(key));
 							break;
 						default:
-							assertEquals(value, resultObject.getString(key));
+							assertEquals(key + "验证失败", value,
+									resultObject.getString(key));
 							break;
 						}
 					}
@@ -181,25 +186,26 @@ public class CaseDriver {
 						resultList = resultObject.getJSONArray(key);
 						break;
 					case ">0":
-						assertTrue(resultObject.getInt(key) > 0);
+						assertTrue(key + "验证失败", resultObject.getInt(key) > 0);
 						break;
 					case "<0":
-						assertTrue(resultObject.getInt(key) < 0);
+						assertTrue(key + "验证失败", resultObject.getInt(key) < 0);
 						break;
 					case "!=0":
-						assertTrue(resultObject.getInt(key) != 0);
+						assertTrue(key + "验证失败", resultObject.getInt(key) != 0);
 						break;
 					case "contain":
-						assertTrue(resultObject.containsKey(key));
+						assertTrue(key + "验证失败", resultObject.containsKey(key));
 						break;
 					case "notnull":
-						assertNotNull(resultObject.get(key));
+						assertNotNull(key + "验证失败", resultObject.get(key));
 						break;
 					case "null":
-						assertNull(resultObject.get(key));
+						assertNull(key + "验证失败", resultObject.get(key));
 						break;
 					default:
-						assertEquals(value, resultObject.getString(key));
+						assertEquals(key + "验证失败", value,
+								resultObject.getString(key));
 						break;
 					}
 				}
