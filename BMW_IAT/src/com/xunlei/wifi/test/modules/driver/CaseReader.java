@@ -113,7 +113,7 @@ public class CaseReader {
 	 * @return
 	 */
 	public XSSFCell getResponseCell(XSSFRow row) {
-		return row.getCell((short) 14);
+		return row.getCell((short) 4);
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class CaseReader {
 	 * @return
 	 */
 	public XSSFCell getExceptionCell(XSSFRow row) {
-		return row.getCell((short) 15);
+		return row.getCell((short) 5);
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class CaseReader {
 		HashMap<String, String> map = new HashMap<>();
 		// 计算下一行
 		XSSFRow valueRow = this.sheet.getRow(row.getRowNum() + 1);
-		for (int i = 5; i < 14; i++) {
+		for (int i = 7; i < 18; i++) {
 			// 判断参数行末尾
 			if (row.getCell(i).getCellType() == 3) {
 				break;
@@ -159,7 +159,7 @@ public class CaseReader {
 		// 计算行数
 		XSSFRow keyRow = this.sheet.getRow(row.getRowNum() + 2);
 		XSSFRow valueRow = this.sheet.getRow(row.getRowNum() + 3);
-		for (int i = 5; i < 14; i++) {
+		for (int i = 7; i < 18; i++) {
 			// 判断末尾
 			if (keyRow.getCell(i).getCellType() == 3) {
 				break;

@@ -96,7 +96,6 @@ public class CaseDriver {
 				// 从excel获取预期结果集合
 				LinkedHashMap<String, String> resultMap = caseReader
 						.getResultsMap(row);
-				System.out.println(resultMap);
 				// 验证结果，在excel中记录用例运行结果
 				int result = verifyResult(resultObject, resultMap, row,
 						exceptionCell);
