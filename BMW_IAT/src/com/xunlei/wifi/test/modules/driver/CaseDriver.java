@@ -27,6 +27,7 @@ public class CaseDriver {
 	public int apiNum;
 	public int caseNum;
 	public String apiName;
+	public XSSFCell testTime;
 
 	public XSSFWorkbook wb;
 	public ExcelReader excel;
@@ -49,6 +50,16 @@ public class CaseDriver {
 		this.caseReader = new CaseReader(wb, index);
 		this.apiName = caseReader.getApiName();
 		this.caseNum = caseReader.getCaseCount();
+		this.testTime = caseReader.getTestTime();
+	}
+
+	/**
+	 * 记录测试时间
+	 * 
+	 * @param time
+	 */
+	public void saveTime(String time) {
+		this.testTime.setCellValue(time);
 	}
 
 	/**

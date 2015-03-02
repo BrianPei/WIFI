@@ -44,6 +44,16 @@ public class CaseReader {
 	}
 
 	/**
+	 * 获取测试时间单元格
+	 * 
+	 * @return
+	 */
+	public XSSFCell getTestTime() {
+		XSSFRow row = this.sheet.getRow(1);
+		return row.getCell(2);
+	}
+
+	/**
 	 * 获取用例数量
 	 * 
 	 * @return

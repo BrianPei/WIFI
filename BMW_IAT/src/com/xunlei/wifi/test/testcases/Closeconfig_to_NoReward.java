@@ -1,4 +1,4 @@
-package com.xunlei.wifi.test.testcase;
+package com.xunlei.wifi.test.testcases;
 
 import net.sf.json.JSONObject;
 
