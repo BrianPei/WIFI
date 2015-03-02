@@ -10,13 +10,9 @@
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
-	
-	<target name="init">
-		<deletedir dir = "${binpath}"/>
-	</target>
-	
-	<target name="compile" depends="init">
-		<javac srcdir="${srcpath}" destdir="${binpath}" classpathref="compile.path"/>
+
+	<target name="compile">
+		<javac srcdir="${srcpath}" destdir="${binpath}" classpathref="compile.path" includeantruntime="on" />
 	</target>
 
 	<target name="junit" depends="compile">
@@ -29,20 +25,20 @@
 				<path refid="compile.path" />
 			</classpath>
 
-			<formatter type="plain" />
+			<formatter type="xml" />
 			<batchtest fork="yes" todir="${reportpath}/test-${DSTAMP}-${TSTAMP}">
 				<fileset dir="${srcpath}">
-					<include name="com/xunlei/wifi/test/${targetPath}/*.java" />
+					<include name="com/xunlei/wifi/test/drivecases/*.java" />
 				</fileset>
 			</batchtest>
 		</junit>
-		
-		<junitreport todir="${report}"> 
-			<fileset dir="${reportpath}/test-${DSTAMP}-${TSTAMP}"> 
-				<include name="TEST-*.xml"/> 
-			</fileset> 
-			<report format="frames" todir="${reportpath}/test-${DSTAMP}-${TSTAMP}"/> 
-		</junitreport> 
-		<echo message="测试结束，测试结果保存于test-${DSTAMP}-${TSTAMP}"/>
+
+		<junitreport>
+			<fileset dir="${reportpath}/test-${DSTAMP}-${TSTAMP}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${reportpath}/test-${DSTAMP}-${TSTAMP}" />
+		</junitreport>
+		<echo message="测试结束，测试结果保存于test-${DSTAMP}-${TSTAMP}" />
 	</target>
 </project>
