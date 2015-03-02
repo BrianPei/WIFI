@@ -13,6 +13,8 @@ public class Customdict extends BaseCase{
 	public void testcustomdict_1() {
 		g_user.setHttpParam("bssid", "08:57:00:4D:77:2C");
 		g_user.setHttpParam("ssid", "test");
+		g_user.setHttpParam("lon", "116.4604721069336");
+		g_user.setHttpParam("lat", "39.93004608154297");
 		JSONObject result = g_user.getJsonResp(Constant.WIFIINFO_CUSTOMDICT);
 		assertNotNull(result);
 	}

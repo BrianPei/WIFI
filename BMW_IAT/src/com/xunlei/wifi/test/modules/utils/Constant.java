@@ -8,7 +8,7 @@ package com.xunlei.wifi.test.modules.utils;
 public class Constant {
 	// ===================================平台级参数==================================
 	public static String TEST_URL = "http://twin13a087vm5.sandai.net/api/";
-	public static String PRE_URL = "https://sslquery-wifibee.xunlei.com/api/test";
+	public static String PRE_URL = "https://sslquery-wifibee.xunlei.com/test/api";
 	public static String ONLINE_URL = "https://sslquery-wifibee.xunlei.com/api/";
 
 	public static String APP_ID = "1";
