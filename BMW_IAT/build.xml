@@ -28,7 +28,7 @@
 			<formatter type="xml" />
 			<batchtest fork="yes" todir="${reportpath}/test-${DSTAMP}-${TSTAMP}">
 				<fileset dir="${srcpath}">
-					<include name="com/xunlei/wifi/test/drivecases/*.java" />
+					<include name="com/xunlei/wifi/test/${targetPath}/*.java" />
 				</fileset>
 			</batchtest>
 		</junit>
