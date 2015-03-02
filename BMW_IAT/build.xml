@@ -10,8 +10,16 @@
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
+	
+	<target name="init">
+		<deletedir dir = "${binpath}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${srcpath}" destdir="${binpath}" classpathref="compile.path"/>
+	</target>
 
-	<target name="junit">
+	<target name="junit" depends="compile">
 		<tstamp />
 		<mkdir dir="${reportpath}/test-${DSTAMP}-${TSTAMP}" />
 
@@ -28,6 +36,13 @@
 				</fileset>
 			</batchtest>
 		</junit>
+		
+		<junitreport todir="${report}"> 
+			<fileset dir="${reportpath}/test-${DSTAMP}-${TSTAMP}"> 
+				<include name="TEST-*.xml"/> 
+			</fileset> 
+			<report format="frames" todir="${reportpath}/test-${DSTAMP}-${TSTAMP}"/> 
+		</junitreport> 
 		<echo message="测试结束，测试结果保存于test-${DSTAMP}-${TSTAMP}"/>
 	</target>
 </project>
