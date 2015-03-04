@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="junit" name="BMW_IAT">
+	<property name="binpath" value="bin" />
+	<property name="srcpath" value="src" />
+	<property name="libpath" value="lib" />
+
+	<path id="compile.path">
+		<fileset dir="${libpath}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="compile">
+		<javac srcdir="${srcpath}" destdir="${binpath}" classpathref="compile.path" includeantruntime="on" />
+	</target>
+
+	<target name="junit" depends="compile">
+
+		<junit printsummary="yes" haltonfailure="no" showoutput="yes">
+			<classpath>
+				<pathelement location="${binpath}" />
+				<path refid="compile.path" />
+			</classpath>
+			
+			<batchtest fork="yes">
+				<fileset dir="${srcpath}">
+					<include name="com/xunlei/wifi/test/drivecases/*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+</project>
