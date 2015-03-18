@@ -52,7 +52,7 @@ public class Constant {
 
 	// 预置登录的主帐号（微信）
 	public static String OPENID_PRE = "oGsKms0G_IG6cvXk0sKje9sP89XU";
-	public static String USERNAME_PRE = "青青的小树";
+	public static String USERNAME_PRE = "雷锋151";
 
 	// ================================================================================
 
@@ -60,7 +60,7 @@ public class Constant {
 
 	// 预置登录的主帐号（微信）
 	public static String OPENID_ONLINE = "oGsKms0G_IG6cvXk0sKje9sP89XU";
-	public static String USERNAME_ONLINE = "青青的小树";
+	public static String USERNAME_ONLINE = "雷锋151";
 
 	// ================================================================================
 

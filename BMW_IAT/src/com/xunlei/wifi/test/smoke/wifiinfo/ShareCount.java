@@ -11,7 +11,7 @@ import com.xunlei.wifi.test.modules.utils.Constant;
 public class ShareCount extends BaseCase {
 	@Test(summary = "获取当前用户分享wifi信息", expectedResults = "获取成功", index = 1)
 	public void testShareCount_1() {
-		g_user.setHttpParam("shareUserId", "220062");
+		g_user.setHttpParam("shareUserId", "11027811");
 		JSONObject result = g_user.getJsonResp(Constant.WIFIINFO_SHARECOUNT);
 		assertNotNull(result.getInt("count"));
 	}
